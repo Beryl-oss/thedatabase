@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tout sur les Bases de Données</title>
+  <style>
+  html{
+	  scroll-behavior: smooth;
+  }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+}
+
+header {
+  background: transparent;
+  padding: 60px 20px;
+  text-align: center;
+  background-image: url('header-background.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #dddddd;
+
+}
+nav {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 0;
+  text-align: center;
+  top: 0;
+  transition: 0.3s;
+  z-index: 1000;
+  position: sticky;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+nav a {
+color: #ffffff;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00bcd4 ;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+  color: #00bcd4;
+  margin-bottom: 20px;
+}
+
+ul, ol {
+  line-height: 1.8;
+}
+
+footer {
+  background: none;
+  color: #cccccc;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+ }
+ .footer-link-container{
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap:10px;
+} 
+.link-container img {
+  transition: transform 0.3s ease;
+}
+
+.link-container img:hover {
+  transform: scale(1.1);
+}
+.footer-link-container .github-img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1) drop-shadow(0 0 2px #00bcd4);
+  animation: githubPulse 4s ease-in-out infinite;
+}
+
+/* WhatsApp effet vert doux */
+.footer-link-container .whatsapp-img {
+  width: 16px;
+  height: 16px;
+  filter: drop-shadow(0 0 2px #25d366);
+  animation: whatsappPulse 4s ease-in-out infinite;
+}
+
+/* Mail effet blanc néon */
+.footer-link-container .mail-img {
+  width: 27px;
+  height: 27px;
+  filter: invert(1) drop-shadow(0 0 2px #ffffff);
+  animation: mailPulse 4s ease-in-out infinite;
+}
+.logo-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	gap: 10px;
+}
+.logo{
+	width:90px;
+	height:90px;
+}
+ .tech{
+  left: 70px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #ffffff);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: cosmicGradient 8s ease infinite, sparkle 1.5s infinite alternate;
+}
+
+/* Animation dégradé cosmique */
+@keyframes cosmicGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Scintillement doux */
+@keyframes sparkle {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  }
+}
+.link-container{
+	display: none;
+} 
+
+.shiru{
+	float: right;
+	margin-right:15px;
+}
+ @media screen and (max-width: 600px) {
+ .logo-container{
+	 display: flex;
+	 flex-direction: column;
+	 gap:5px;
+ }
+	  nav{
+		  position: relative;
+		  background: none;
+	  }
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  text-align: center;
+  margin: 6px 0;
+  font-weight: bold;
+}
+/* Les icônes sous les liens */
+
+	
+.link-container {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.footer-link-container a{
+	text-decoration: none;
+}
+
+.link-container img {
+  transition: transform 0.3s ease;
+}
+
+.link-container img:hover {
+  transform: scale(1.1);
+}
+
+/* GitHub effet bleu futuriste */
+.github-img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1) drop-shadow(0 0 2px #00bcd4);
+  animation: githubPulse 4s ease-in-out infinite;
+}
+
+/* WhatsApp effet vert doux */
+.whatsapp-img {
+  width: 16px;
+  height: 16px;
+  filter: drop-shadow(0 0 2px #25d366);
+  animation: whatsappPulse 4s ease-in-out infinite;
+}
+
+/* Mail effet blanc néon */
+.mail-img {
+  width: 27px;
+  height: 27px;
+  filter: invert(1) drop-shadow(0 0 2px #ffffff);
+  animation: mailPulse 4s ease-in-out infinite;
+}
+.footer-link-container{
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap:10px;
+} 
+.link-container img {
+  transition: transform 0.3s ease;
+}
+
+.link-container img:hover {
+  transform: scale(1.1);
+}
+.footer-link-container .github-img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1) drop-shadow(0 0 2px #00bcd4);
+  animation: githubPulse 4s ease-in-out infinite;
+}
+
+/* WhatsApp effet vert doux */
+.footer-link-container .whatsapp-img {
+  width: 16px;
+  height: 16px;
+  filter: drop-shadow(0 0 2px #25d366);
+  animation: whatsappPulse 4s ease-in-out infinite;
+}
+
+/* Mail effet blanc néon */
+.footer-link-container .mail-img {
+  width: 27px;
+  height: 27px;
+  filter: invert(1) drop-shadow(0 0 2px #ffffff);
+  animation: mailPulse 4s ease-in-out infinite;
+}
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+  <div class="link-container" id="link-container">
+  <a href="https://beryl-oss.github.io" target="_blank">
+    <img src="github-img.png" alt="GitHub" class="github-img">
+  </a>
+  <a href="mailto: horizontech719@gmail.com" target="_blank">
+    <img src="mail-img.png" alt="Email" class="mail-img">
+  </a>
+  <a href="https://wa.me/50935832268" target="_blank">
+    <img src="whatsapp-img.png" alt="WhatsApp" class="whatsapp-img">
+  </a>
+</div>
+<div class="logo-container">
+  <img src="logo.png" alt="logo" class="logo">
+  <p class="tech">Horizon-Tech</p>
+ </div>  
+    <h1>Tout sur les Bases de Données</h1>
+    <p>Comprendre, créer et gérer des bases de données efficacement</p>
+  </header>
+
+  <nav class="nav-content" id="main-links">
+    <a href="#definition">Définition</a>
+    <a href="#types">Types</a>
+    <a href="#utilite">Utilité</a>
+    <a href="#creation">Création</a>
+    <a href="#outils">Outils</a>
+    <a href="#liens">Liens utiles</a>
+  </nav>
+
+  <section id="definition">
+    <h2>Qu'est-ce qu'une base de données ?</h2>
+    <p>Une base de données est un système organisé permettant de stocker, gérer et récupérer des informations de manière efficace. Elle est essentielle pour gérer des données structurées dans divers domaines comme les sites web, les applications, les entreprises, etc.</p>
+  </section>
+
+  <section id="types">
+    <h2>Types de bases de données</h2>
+    <ul>
+    <li><strong>Relationnelles (SQL)</strong> : Utilisent des tables avec des relations entre elles. Exemples : MySQL, PostgreSQL.</li>
+      <li><strong>Non relationnelles (NoSQL)</strong> : Stockent les données sous forme de documents, paires clé-valeur, etc. Exemples : MongoDB, Firebase.</li>
+      <li><strong>Hiérarchiques</strong> : Organisent les données en structure arborescente.</li>
+      <li><strong>Réseau</strong> : Similaires aux hiérarchiques mais avec des relations plus complexes.</li>
+    </ul>
+  </section>
+
+  <section id="utilite">
+    <h2>Pourquoi utiliser une base de données ?</h2>
+    <p>Les bases de données permettent de :</p>
+    <ul>
+      <li>Stocker de grandes quantités d'informations de manière structurée.</li>
+      <li>Faciliter l'accès, la modification et la suppression des données.</li>
+      <li>Assurer la sécurité et l'intégrité des données.</li>
+      <li>Permettre le partage des données entre plusieurs utilisateurs ou applications.</li>
+    </ul>
+  </section>
+
+  <section id="creation">
+    <h2>Comment créer une base de données ?</h2>
+    <p>Voici les étapes générales pour créer une base de données :</p>
+    <ol>
+      <li>Choisir le type de base de données adapté à vos besoins.</li>
+      <li>Définir les données à stocker et leur structure.</li>
+      <li>Utiliser un Système de Gestion de Base de Données (SGBD) comme MySQL, PostgreSQL, MongoDB, etc.</li>
+      <li>Créer les tables ou collections et définir les relations entre elles.</li>
+      <li>Insérer les données et tester les requêtes pour s'assurer du bon fonctionnement.</li>
+    </ol>
+  </section>
+
+  <section id="outils">
+    <h2>Outils populaires</h2>
+    <ul>
+      <li><strong>MySQL</strong> : SGBD relationnel open-source très utilisé.</li>
+      <li><strong>PostgreSQL</strong> : SGBD relationnel avancé avec de nombreuses fonctionnalités.</li>
+      <li><strong>MongoDB</strong> : Base de données NoSQL orientée documents.</li>
+      <li><strong>Firebase</strong> : Plateforme de développement d'applications avec base de données en temps réel.</li>
+      <li><strong>SQLite</strong> : Base de données légère intégrée dans de nombreuses applications.</li>
+    </ul>
+  </section>
+
+  <section id="liens">
+    <h2>Liens utiles</h2>
+    <ul>
+      <li><a href="https://openclassrooms.com/fr/courses/6204541-concevez-votre-base-de-donnees" target="_blank">Concevez votre base de données - OpenClassrooms</a></li>
+      <li><a href="https://www.w3schools.com/sql/" target="_blank">Tutoriel SQL - W3Schools</a></li>
+      <li><a href="https://www.mongodb.com/what-is-mongodb" target="_blank">Qu'est-ce que MongoDB ?</a></li>
+      <li><a href="https://firebase.google.com/" target="_blank">Firebase - Google</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Horizon-Tech Haïti. Tous droits réservés.</p>
+    <div class="footer-link-container" id="link-container">
+  <a href="https://beryl-oss.github.io" target="_blank">
+    <img src="github-img.png" alt="GitHub" class="github-img">
+  </a>
+  <a href="mailto: horizontech719@gmail.com" target="_blank">
+    <img src="mail-img.png" alt="Email" class="mail-img">
+  </a>
+  <a href="https://wa.me/50935832268" target="_blank">
+    <img src="whatsapp-img.png" alt="WhatsApp" class="whatsapp-img">
+  </a>
+</div>
+<p class="shiru">by <strong>ＳＨＩＲＵ</strong></p>
+  </footer>
+</body>
+<script>
+  const mainLinks = document.querySelector("#main-links");
+  let lastScrollValue = 0;
+
+  function handleScroll() {
+    if (window.innerWidth >= 600) { // ✅ N’exécute que si écran ≥ 600px
+      if (window.scrollY > lastScrollValue) {
+        mainLinks.style.top = "-60px";
+      } else {
+        mainLinks.style.top = "0";
+      }
+      lastScrollValue = window.scrollY;
+    } else {
+      // Restaure la position si on revient à un petit écran
+      mainLinks.style.top = "0";
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleScroll); // Pour gérer changement de taille d’écran
+</script>
+</html>
+    
