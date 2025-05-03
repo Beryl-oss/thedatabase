@@ -56,15 +56,50 @@ nav {
 }
 
 nav a {
-color: #ffffff;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
   margin: 0 20px;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, padding-bottom 0.3s ease;
+  border-bottom: 2px solid transparent; /* Transparent border initially */
+  transition: border-color 0.3s ease, padding-bottom 0.3s ease;
 }
 
 nav a:hover {
-  color: #00bcd4 ;
+  color: #fff; 
+  padding-bottom: 5px; 
+  border-color: #7f00ff;
+}
+
+nav a.active {
+  background-color: #7f00ff;
+  border-radius: 5px;
+  border-bottom: none; 
+  text-decoration: none;
+}
+	  
+nav a:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: #7f00ff;
+  border-radius: 2px;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+nav a.active::after {
+  content: none; 
 }
 
 section {
